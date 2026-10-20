@@ -29,11 +29,14 @@
 
     html {
       width: 100%;
+      min-width: 0;
+      overflow-x: clip;
       scroll-behavior: smooth
     }
 
     body {
       width: 100%;
+      max-width: 100%;
       min-width: 0;
       background: #fff5f8;
       color: var(--ink);
@@ -59,6 +62,7 @@
     #main {
       display: block;
       width: 100%;
+      min-width: 0;
       max-width: 100%;
       margin: 0 auto;
       position: relative;
@@ -1145,7 +1149,16 @@
     }
 
     @media(max-width:700px) {
+      html,
+      body,
+      #main {
+        width: 100%;
+        max-width: 100%;
+      }
+
       section {
+        width: 100%;
+        max-width: 100%;
         min-height: 100svh;
         padding: max(64px, env(safe-area-inset-top)) 18px max(64px, env(safe-area-inset-bottom));
         gap: 0
